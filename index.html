@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Latihan Soal IPS SD</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       font-family: Comic Sans MS, cursive, sans-serif;
       background: linear-gradient(to bottom, #a8e6cf, #dcedc1);
@@ -16,29 +13,20 @@
       padding: 20px;
       margin: 0;
     }
-
     .container {
       background-color: #ffffffcc;
       border-radius: 20px;
       padding: 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
-
     h1, h2 {
       text-align: center;
       margin: 0 0 20px 0;
     }
-
-    h1 {
-      color: #3c9;
-    }
-
-    h2 {
-      color: #ff6f69;
-    }
-
+    h1 { color: #3c9; }
+    h2 { color: #ff6f69; }
     .soal {
       background-color: #fefbd8;
       padding: 15px;
@@ -46,12 +34,10 @@
       border-radius: 15px;
       border-left: 10px solid #ffcc5c;
     }
-
     label {
       display: block;
       margin: 8px 0;
     }
-
     button {
       display: block;
       margin: 30px auto;
@@ -66,11 +52,7 @@
       width: 100%;
       max-width: 300px;
     }
-
-    button:hover {
-      background-color: #66bb99;
-    }
-
+    button:hover { background-color: #66bb99; }
     #hasil {
       background-color: #dcedc1;
       padding: 20px;
@@ -78,43 +60,30 @@
       border-radius: 10px;
       font-size: 18px;
     }
-
     .benar { color: green; font-weight: bold; }
     .salah { color: red; font-weight: bold; }
 
     @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
-
-      .container {
-        padding: 15px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-
-      #hasil {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 14px;
-        padding: 10px 18px;
-      }
+      body { padding: 10px; }
+      .container { padding: 15px; }
+      h1 { font-size: 24px; }
+      h2 { font-size: 18px; }
+      #hasil { font-size: 16px; }
+      button { font-size: 14px; padding: 10px 18px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🌟 Latihan Soal OSN-K IPS SD 🌟</h1>
-    <h2>Yuk uji kemampuanmu!</h2>
+    <h2>Masukkan Nama dan Jawab Semua Soal Ya!</h2>
     <form id="quizForm">
+      <div class="soal">
+        <p>Nama Peserta:</p>
+        <input type="text" id="namaPeserta" name="namaPeserta" placeholder="Tulis nama lengkap" required style="padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+      <!-- 10 Soal Pilihan Ganda -->
       <div class="soal">
         <p>1. Dibawah ini adalah syarat-syarat peta. Kecuali...</p>
         <label><input type="radio" name="q1" value="A"> A. Legenda</label>
@@ -131,6 +100,70 @@
         <label><input type="radio" name="q2" value="D"> D. Dataran rendah dan laut dalam</label>
       </div>
 
+      <div class="soal">
+        <p>3. Alat yang digunakan untuk menunjukkan arah mata angin adalah...</p>
+        <label><input type="radio" name="q3" value="A"> A. Barometer</label>
+        <label><input type="radio" name="q3" value="B"> B. Kompas</label>
+        <label><input type="radio" name="q3" value="C"> C. Termometer</label>
+        <label><input type="radio" name="q3" value="D"> D. Altimeter</label>
+      </div>
+
+      <div class="soal">
+        <p>4. Indonesia memiliki dua musim, yaitu...</p>
+        <label><input type="radio" name="q4" value="A"> A. Musim salju dan gugur</label>
+        <label><input type="radio" name="q4" value="B"> B. Musim panas dan dingin</label>
+        <label><input type="radio" name="q4" value="C"> C. Musim hujan dan kemarau</label>
+        <label><input type="radio" name="q4" value="D"> D. Musim panas dan salju</label>
+      </div>
+
+      <div class="soal">
+        <p>5. Sungai terbesar dan terpanjang di Indonesia adalah...</p>
+        <label><input type="radio" name="q5" value="A"> A. Sungai Kapuas</label>
+        <label><input type="radio" name="q5" value="B"> B. Sungai Bengawan Solo</label>
+        <label><input type="radio" name="q5" value="C"> C. Sungai Musi</label>
+        <label><input type="radio" name="q5" value="D"> D. Sungai Brantas</label>
+      </div>
+
+      <div class="soal">
+        <p>6. Gunung tertinggi di Indonesia adalah...</p>
+        <label><input type="radio" name="q6" value="A"> A. Gunung Merapi</label>
+        <label><input type="radio" name="q6" value="B"> B. Gunung Kerinci</label>
+        <label><input type="radio" name="q6" value="C"> C. Gunung Semeru</label>
+        <label><input type="radio" name="q6" value="D"> D. Puncak Jaya</label>
+      </div>
+
+      <div class="soal">
+        <p>7. Peta yang menggambarkan keadaan tinggi rendah permukaan bumi disebut peta...</p>
+        <label><input type="radio" name="q7" value="A"> A. Peta tematik</label>
+        <label><input type="radio" name="q7" value="B"> B. Peta topografi</label>
+        <label><input type="radio" name="q7" value="C"> C. Peta cuaca</label>
+        <label><input type="radio" name="q7" value="D"> D. Peta iklim</label>
+      </div>
+
+      <div class="soal">
+        <p>8. Bencana alam yang sering terjadi di Indonesia karena letak geografisnya adalah...</p>
+        <label><input type="radio" name="q8" value="A"> A. Angin tornado</label>
+        <label><input type="radio" name="q8" value="B"> B. Kebakaran hutan</label>
+        <label><input type="radio" name="q8" value="C"> C. Gempa bumi dan letusan gunung</label>
+        <label><input type="radio" name="q8" value="D"> D. Kekeringan panjang</label>
+      </div>
+
+      <div class="soal">
+        <p>9. Bentuk permukaan bumi yang lebih rendah dari sekitarnya dan sering dialiri sungai disebut...</p>
+        <label><input type="radio" name="q9" value="A"> A. Gunung</label>
+        <label><input type="radio" name="q9" value="B"> B. Lembah</label>
+        <label><input type="radio" name="q9" value="C"> C. Dataran tinggi</label>
+        <label><input type="radio" name="q9" value="D"> D. Bukit</label>
+      </div>
+
+      <div class="soal">
+        <p>10. Wilayah Indonesia yang dilewati garis khatulistiwa adalah...</p>
+        <label><input type="radio" name="q10" value="A"> A. Jawa dan Bali</label>
+        <label><input type="radio" name="q10" value="B"> B. Sumatera dan Jawa</label>
+        <label><input type="radio" name="q10" value="C"> C. Kalimantan dan Sulawesi</label>
+        <label><input type="radio" name="q10" value="D"> D. Kalimantan dan Papua</label>
+      </div>
+
       <button type="button" onclick="cekJawaban()">Lihat Hasil</button>
     </form>
 
@@ -139,14 +172,19 @@
 
   <script>
     function cekJawaban() {
-      const kunci = { q1: "D", q2: "D" };
+      const kunci = {
+        q1: "D", q2: "D", q3: "B", q4: "C", q5: "A",
+        q6: "D", q7: "B", q8: "C", q9: "B", q10: "D"
+      };
       let skor = 0;
-      let total = 2;
+      let total = 10;
       let hasilHTML = "<h3>🎉 Hasil Jawaban Kamu 🎉</h3>";
+      const jawabanUser = [];
 
       for (let i = 1; i <= total; i++) {
         const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
         if (jawaban) {
+          jawabanUser.push(jawaban.value);
           if (jawaban.value === kunci[`q${i}`]) {
             skor++;
             hasilHTML += `<p class="benar">✅ Soal ${i}: Benar!</p>`;
@@ -154,12 +192,28 @@
             hasilHTML += `<p class="salah">❌ Soal ${i}: Salah (Jawaban benar: ${kunci[`q${i}`]})</p>`;
           }
         } else {
+          jawabanUser.push("Kosong");
           hasilHTML += `<p>⚠️ Soal ${i}: Belum dijawab</p>`;
         }
       }
 
+      const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
       hasilHTML += `<p><strong>Skor Akhir: ${skor} dari ${total} soal</strong></p>`;
       document.getElementById("hasil").innerHTML = hasilHTML;
+      eksporCSV(nama, skor, total, jawabanUser);
+    }
+
+    function eksporCSV(nama, skor, total, jawabanUser) {
+      const header = "Nama,Skor,Total,Jawaban\n";
+      const isi = `${nama},${skor},${total},"${jawabanUser.join(";")}"\n`;
+      const blob = new Blob([header + isi], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `hasil_${nama.replace(/\s+/g, "_")}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
 </body>
