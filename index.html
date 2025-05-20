@@ -82,10 +82,7 @@
         <input type="text" id="namaPeserta" name="namaPeserta" placeholder="Tulis nama lengkap" required style="padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
       </div>
 
-      <!-- Soal-soal -->
-      <!-- Semua 10 soal dari versi kamu sebelumnya saya masukkan langsung ke sini -->
-      <!-- Mulai soal pertama -->
-
+       <!-- Contoh 2 Soal, kamu bisa lanjutkan sesuai yang sudah kamu punya -->
       <div class="soal">
         <p>1. Dibawah ini adalah syarat-syarat peta. Kecuali...</p>
         <label><input type="radio" name="q1" value="A"> A. Legenda</label>
@@ -165,6 +162,7 @@
         <label><input type="radio" name="q10" value="C"> C. Kalimantan dan Sulawesi</label>
         <label><input type="radio" name="q10" value="D"> D. Kalimantan dan Papua</label>
       </div>
+      <!-- Tambahkan soal-soal lainnya di sini -->
 
       <button type="button" onclick="cekJawaban()">Lihat Hasil</button>
     </form>
@@ -177,6 +175,7 @@
         q1: "D", q2: "D", q3: "B", q4: "C", q5: "A",
         q6: "D", q7: "B", q8: "C", q9: "B", q10: "D"
       };
+
       let skor = 0;
       const total = Object.keys(kunci).length;
       const jawabanUser = [];
@@ -195,18 +194,21 @@
       const hasilHTML = `<h3>🎉 Skor: ${skor} dari ${total} soal</h3>`;
       document.getElementById("hasil").innerHTML = hasilHTML;
 
+      // Kirim ke Google Sheets pakai FormData agar bebas CORS
+      const formData = new FormData();
+      formData.append("nama", nama);
+      formData.append("skor", skor);
+      formData.append("total", total);
+      formData.append("jawaban", jawabanUser.join(";"));
+
       fetch("https://script.google.com/macros/s/AKfycbzRWsUaTngpMs3Vghrh63lHvW4D94_JY4T2GKGIff2HBqAwy0tah8ETWF6PnWPHbqB4Yw/exec", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nama: nama,
-          skor: skor,
-          total: total,
-          jawaban: jawabanUser
-        })
-      }).then(() => {
+        body: formData
+      })
+      .then(() => {
         alert("✅ Jawabanmu sudah terkirim ke Google Sheets!");
-      }).catch(() => {
+      })
+      .catch(() => {
         alert("❌ Gagal mengirim ke Sheets. Silakan cek koneksi atau ulangi lagi.");
       });
     }
