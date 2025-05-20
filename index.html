@@ -2,55 +2,69 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latihan Soal IPS SD</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Comic Sans MS, cursive, sans-serif;
       background: linear-gradient(to bottom, #a8e6cf, #dcedc1);
       color: #333;
-      padding: 30px;
+      padding: 20px;
+      margin: 0;
     }
 
     .container {
       background-color: #ffffffcc;
       border-radius: 20px;
-      padding: 30px;
+      padding: 20px;
       max-width: 800px;
       margin: auto;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
+      margin: 0 0 20px 0;
+    }
+
+    h1 {
       color: #3c9;
-      margin-bottom: 10px;
     }
 
     h2 {
-      text-align: center;
       color: #ff6f69;
-      margin-bottom: 30px;
     }
 
     .soal {
       background-color: #fefbd8;
-      padding: 20px;
+      padding: 15px;
       margin-bottom: 20px;
       border-radius: 15px;
       border-left: 10px solid #ffcc5c;
     }
 
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+
     button {
       display: block;
-      margin: 20px auto;
+      margin: 30px auto;
       background-color: #88d8b0;
       color: white;
       font-weight: bold;
-      padding: 10px 20px;
+      padding: 12px 24px;
       font-size: 16px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+      width: 100%;
+      max-width: 300px;
     }
 
     button:hover {
@@ -67,6 +81,33 @@
 
     .benar { color: green; font-weight: bold; }
     .salah { color: red; font-weight: bold; }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      #hasil {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -76,17 +117,17 @@
     <form id="quizForm">
       <div class="soal">
         <p>1. Dibawah ini adalah syarat-syarat peta. Kecuali...</p>
-        <label><input type="radio" name="q1" value="A"> A. Legenda</label><br>
-        <label><input type="radio" name="q1" value="B"> B. Simbol</label><br>
-        <label><input type="radio" name="q1" value="C"> C. Keterangan</label><br>
+        <label><input type="radio" name="q1" value="A"> A. Legenda</label>
+        <label><input type="radio" name="q1" value="B"> B. Simbol</label>
+        <label><input type="radio" name="q1" value="C"> C. Keterangan</label>
         <label><input type="radio" name="q1" value="D"> D. Inset</label>
       </div>
 
       <div class="soal">
         <p>2. Warna hijau dan biru tua di peta menggambarkan...</p>
-        <label><input type="radio" name="q2" value="A"> A. Dataran rendah dan dataran tinggi</label><br>
-        <label><input type="radio" name="q2" value="B"> B. Dataran rendah dan pegunungan</label><br>
-        <label><input type="radio" name="q2" value="C"> C. Dataran tinggi dan laut dangkal</label><br>
+        <label><input type="radio" name="q2" value="A"> A. Dataran rendah dan dataran tinggi</label>
+        <label><input type="radio" name="q2" value="B"> B. Dataran rendah dan pegunungan</label>
+        <label><input type="radio" name="q2" value="C"> C. Dataran tinggi dan laut dangkal</label>
         <label><input type="radio" name="q2" value="D"> D. Dataran rendah dan laut dalam</label>
       </div>
 
