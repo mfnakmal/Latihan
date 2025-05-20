@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan Soal Matematika SD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #a8e6cf, #dcedc1);
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+    h1 { color: #3c9; }
+    h2 { color: #ff6f69; }
+    .soal {
+      background-color: #fefbd8;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      border-left: 10px solid #ffcc5c;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      background-color: #88d8b0;
+      color: white;
+      font-weight: bold;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+    }
+    button:hover { background-color: #66bb99; }
+    #hasil {
+      background-color: #dcedc1;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    .benar { color: green; font-weight: bold; }
+    .salah { color: red; font-weight: bold; }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      .container { padding: 15px; }
+      h1 { font-size: 24px; }
+      h2 { font-size: 18px; }
+      #hasil { font-size: 16px; }
+      button { font-size: 14px; padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-bottom: 10px;">
+    <img src="logo-tutwuri.png" alt="Tut Wuri Handayani" height="60" style="margin: 5px;">
+    <img src="logo-sd.png" alt="Logo SD" height="60" style="margin: 5px;">
+    <h1 style="margin: 0; font-size: 22px; color: #2e7d32;">SDN Bangka 03 Pagi</h1>
+    <h2 style="margin: 0 0 20px; color: #555;">🌟Latihan Soal OSN-K Mata Pelajaran Matematika</h2>
+  </div>
+  <div class="container">
+    <h2>Masukkan Nama dan Jawab Semua Soal Ya!</h2>
+    <form id="quizForm">
+      <div class="soal">
+        <p>Nama Peserta:</p>
+        <input type="text" id="namaPeserta" name="namaPeserta" placeholder="Tulis nama lengkap" required style="padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+    
+<!-- Soal Matematika OSN-K SD 2024 - 25 Soal Pertama -->
+<!-- MathJax script -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Contoh Soal 1 -->
+<div class="soal">
+  <p>1. Susi mengurutkan bilangan kelipatan 2, Wati bilangan kelipatan 3. Jumlah bilangan ke-25 Susi dan ke-20 Wati adalah ....</p>
+  <label><input type="radio" name="q1" value="A"> A. 100</label>
+  <label><input type="radio" name="q1" value="B"> B. 110</label>
+  <label><input type="radio" name="q1" value="C"> C. 115</label>
+  <label><input type="radio" name="q1" value="D"> D. 125</label>
+</div>
+
+<!-- Soal 2 -->
+<div class="soal">
+  <p>2. Hasil dari \( 25 \times (2 + 4) - 10 \div 2 \) adalah ....</p>
+  <label><input type="radio" name="q2" value="A"> A. 135</label>
+  <label><input type="radio" name="q2" value="B"> B. 145</label>
+  <label><input type="radio" name="q2" value="C"> C. 150</label>
+  <label><input type="radio" name="q2" value="D"> D. 155</label>
+</div>
+
+<!-- Soal 3 -->
+<div class="soal">
+  <p>3. Nilai dari \( 4^3 - 3^2 \) adalah ....</p>
+  <label><input type="radio" name="q3" value="A"> A. 55</label>
+  <label><input type="radio" name="q3" value="B"> B. 52</label>
+  <label><input type="radio" name="q3" value="C"> C. 49</label>
+  <label><input type="radio" name="q3" value="D"> D. 45</label>
+</div>
+
+<!-- Soal 4 -->
+<div class="soal">
+  <p>4. Jika \( \frac{3}{5} \) dari suatu bilangan adalah 36, maka bilangan itu adalah ....</p>
+  <label><input type="radio" name="q4" value="A"> A. 50</label>
+  <label><input type="radio" name="q4" value="B"> B. 60</label>
+  <label><input type="radio" name="q4" value="C"> C. 72</label>
+  <label><input type="radio" name="q4" value="D"> D. 75</label>
+</div>
+
+<!-- Soal 5 -->
+<div class="soal">
+  <p>5. Faktor prima dari 144 adalah ....</p>
+  <label><input type="radio" name="q5" value="A"> A. 2, 3</label>
+  <label><input type="radio" name="q5" value="B"> B. 2, 3, 4</label>
+  <label><input type="radio" name="q5" value="C"> C. 2, 6</label>
+  <label><input type="radio" name="q5" value="D"> D. 3, 6</label>
+</div>
+
+<!-- Soal 6 -->
+<div class="soal">
+  <p>6. Nilai dari \( 12^2 - 9^2 \) adalah ....</p>
+  <label><input type="radio" name="q6" value="A"> A. 63</label>
+  <label><input type="radio" name="q6" value="B"> B. 81</label>
+  <label><input type="radio" name="q6" value="C"> C. 135</label>
+  <label><input type="radio" name="q6" value="D"> D. 144</label>
+</div>
+
+<!-- Soal 7 -->
+<div class="soal">
+  <p>7. Jika suatu segitiga memiliki panjang alas 10 cm dan tinggi 12 cm, maka luas segitiga tersebut adalah ....</p>
+  <label><input type="radio" name="q7" value="A"> A. 60 cm²</label>
+  <label><input type="radio" name="q7" value="B"> B. 120 cm²</label>
+  <label><input type="radio" name="q7" value="C"> C. 80 cm²</label>
+  <label><input type="radio" name="q7" value="D"> D. 100 cm²</label>
+</div>
+
+<!-- Soal 8 -->
+<div class="soal">
+  <p>8. Nilai dari \( 3^3 + 2^4 \) adalah ....</p>
+  <label><input type="radio" name="q8" value="A"> A. 35</label>
+  <label><input type="radio" name="q8" value="B"> B. 33</label>
+  <label><input type="radio" name="q8" value="C"> C. 31</label>
+  <label><input type="radio" name="q8" value="D"> D. 29</label>
+</div>
+
+<!-- Soal 9 -->
+<div class="soal">
+  <p>9. Suatu toko menjual 3 buku tulis seharga Rp7.500,00. Harga 5 buku tulis adalah ....</p>
+  <label><input type="radio" name="q9" value="A"> A. Rp11.500,00</label>
+  <label><input type="radio" name="q9" value="B"> B. Rp12.000,00</label>
+  <label><input type="radio" name="q9" value="C"> C. Rp12.500,00</label>
+  <label><input type="radio" name="q9" value="D"> D. Rp13.000,00</label>
+</div>
+
+<!-- Soal 10 -->
+<div class="soal">
+  <p>10. Suku ke-10 dari barisan bilangan 2, 5, 8, 11, ... adalah ....</p>
+  <label><input type="radio" name="q10" value="A"> A. 26</label>
+  <label><input type="radio" name="q10" value="B"> B. 29</label>
+  <label><input type="radio" name="q10" value="C"> C. 30</label>
+  <label><input type="radio" name="q10" value="D"> D. 32</label>
+</div>
+
+<!-- Soal 11 -->
+<div class="soal">
+  <p>11. Hasil dari \( \frac{2}{3} + \frac{4}{5} \) adalah ....</p>
+  <label><input type="radio" name="q11" value="A"> A. \( \frac{22}{15} \)</label>
+  <label><input type="radio" name="q11" value="B"> B. \( \frac{18}{15} \)</label>
+  <label><input type="radio" name="q11" value="C"> C. \( \frac{14}{15} \)</label>
+  <label><input type="radio" name="q11" value="D"> D. \( \frac{8}{15} \)</label>
+</div>
+
+<!-- Soal 12 -->
+<div class="soal">
+  <p>12. Jika keliling persegi panjang adalah 36 cm dan panjangnya 10 cm, maka lebarnya adalah ....</p>
+  <label><input type="radio" name="q12" value="A"> A. 6 cm</label>
+  <label><input type="radio" name="q12" value="B"> B. 7 cm</label>
+  <label><input type="radio" name="q12" value="C"> C. 8 cm</label>
+  <label><input type="radio" name="q12" value="D"> D. 9 cm</label>
+</div>
+
+<!-- Soal 13 -->
+<div class="soal">
+  <p>13. Hasil dari \( (3 + 2)^2 - (4 \times 2) \) adalah ....</p>
+  <label><input type="radio" name="q13" value="A"> A. 25</label>
+  <label><input type="radio" name="q13" value="B"> B. 21</label>
+  <label><input type="radio" name="q13" value="C"> C. 16</label>
+  <label><input type="radio" name="q13" value="D"> D. 9</label>
+</div>
+
+<!-- Soal 14 -->
+<div class="soal">
+  <p>14. Dalam satu kotak terdapat 5 bola merah dan 3 bola biru. Peluang terambil bola biru adalah ....</p>
+  <label><input type="radio" name="q14" value="A"> A. \( \frac{3}{8} \)</label>
+  <label><input type="radio" name="q14" value="B"> B. \( \frac{5}{8} \)</label>
+  <label><input type="radio" name="q14" value="C"> C. \( \frac{1}{2} \)</label>
+  <label><input type="radio" name="q14" value="D"> D. \( \frac{3}{5} \)</label>
+</div>
+
+<!-- Soal 15 -->
+<div class="soal">
+  <p>15. Nilai dari \( 2^4 + 3^3 \) adalah ....</p>
+  <label><input type="radio" name="q15" value="A"> A. 35</label>
+  <label><input type="radio" name="q15" value="B"> B. 36</label>
+  <label><input type="radio" name="q15" value="C"> C. 37</label>
+  <label><input type="radio" name="q15" value="D"> D. 38</label>
+</div>
+
+<!-- Soal 16 -->
+<div class="soal">
+  <p>16. Jumlah keliling suatu persegi dan suatu persegi panjang sama dengan tiga kali keliling suatu segitiga sama sisi. Diketahui panjang sisi persegi dan segitiga sama sisi berturut-turut adalah 12 cm dan 10 cm. Jika lebar persegi panjang adalah 9 cm, maka perbandingan lebar dan panjang dari persegi panjang adalah ....</p>
+  <label><input type="radio" name="q16" value="A"> A. 2 : 3</label>
+  <label><input type="radio" name="q16" value="B"> B. 1 : 2</label>
+  <label><input type="radio" name="q16" value="C"> C. 1 : 4</label>
+  <label><input type="radio" name="q16" value="D"> D. 3 : 4</label>
+</div>
+
+<!-- Soal 17 -->
+<div class="soal">
+  <p>17. Perhatikan gambar segitiga sama kaki ABC berikut.<br><img src="img/segitiga-abc.png" alt="segitiga ABC"><br>Titik D berada pada garis AB. Panjang t adalah ... satuan panjang.</p>
+  <label><input type="radio" name="q17" value="A"> A. \( \frac{15}{8} \)</label>
+  <label><input type="radio" name="q17" value="B"> B. \( \frac{24}{5} \)</label>
+  <label><input type="radio" name="q17" value="C"> C. \( \frac{40}{3} \)</label>
+  <label><input type="radio" name="q17" value="D"> D. 120</label>
+</div>
+
+<!-- Soal 18 -->
+<div class="soal">
+  <p>18. Tabung A memiliki jari-jari sama dengan tingginya, sedangkan tabung B memiliki jari-jari sama dengan \( \frac{3}{4} \) tingginya. Jika jari-jari tabung A sama dengan dua kali jari-jari tabung B, maka perbandingan luas selimut tabung A dan tabung B adalah ....</p>
+  <label><input type="radio" name="q18" value="A"> A. 2 : 1</label>
+  <label><input type="radio" name="q18" value="B"> B. 3 : 1</label>
+  <label><input type="radio" name="q18" value="C"> C. 4 : 3</label>
+  <label><input type="radio" name="q18" value="D"> D. 3 : 2</label>
+</div>
+
+<!-- Soal 19 -->
+<div class="soal">
+  <p>19. Perhatikan gambar berikut.<br><img src="img/persegi-befg.png" alt="persegi BEFG"><br>Jika perbandingan HB : BE = 1 : 3, maka luas daerah yang diarsir adalah ... cm².</p>
+  <label><input type="radio" name="q19" value="A"> A. 28</label>
+  <label><input type="radio" name="q19" value="B"> B. 33</label>
+  <label><input type="radio" name="q19" value="C"> C. 38</label>
+  <label><input type="radio" name="q19" value="D"> D. 42</label>
+</div>
+
+<!-- Soal 20 -->
+<div class="soal">
+  <p>20. Hasil ujian matematika di suatu kelas yang terdiri dari 20 siswa berada pada interval 56–100. Rata-rata seluruh siswa di kelas tersebut adalah 68. Sebanyak 3 siswa mengikuti remedial dengan nilai maksimum 75. Rata-rata tertinggi setelah remedial yang mungkin untuk kelas tersebut adalah ....</p>
+  <label><input type="radio" name="q20" value="A"> A. 70,65</label>
+  <label><input type="radio" name="q20" value="B"> B. 70,75</label>
+  <label><input type="radio" name="q20" value="C"> C. 70,85</label>
+  <label><input type="radio" name="q20" value="D"> D. 70,95</label>
+</div>
+
+<!-- Soal 21 -->
+<div class="soal">
+  <p>21. Tabel berikut menunjukkan penjualan roti dalam dua hari:<br><img src="img/tabel-roti.png" alt="tabel penjualan roti"><br>Grafik rata-rata banyak penjualan keenam roti tersebut adalah ....</p>
+  <label><input type="radio" name="q21" value="A"> A. <img src="img/grafik-a.png" alt="grafik A"></label>
+  <label><input type="radio" name="q21" value="B"> B. <img src="img/grafik-b.png" alt="grafik B"></label>
+  <label><input type="radio" name="q21" value="C"> C. <img src="img/grafik-c.png" alt="grafik C"></label>
+  <label><input type="radio" name="q21" value="D"> D. <img src="img/grafik-d.png" alt="grafik D"></label>
+</div>
+
+<!-- Soal 22 -->
+<div class="soal">
+  <p>22. Dua tim siswa sekolah dasar, yaitu tim A dan tim B, berlomba lari estafet 4 × 100 meter. Berikut adalah kecepatan pelari tiap tim:<br><img src="img/tabel-lari.png" alt="tabel lari"><br>Selisih waktu tempuh kedua tim adalah … detik</p>
+  <label><input type="radio" name="q22" value="A"> A. 11</label>
+  <label><input type="radio" name="q22" value="B"> B. 10</label>
+  <label><input type="radio" name="q22" value="C"> C. 9</label>
+  <label><input type="radio" name="q22" value="D"> D. 8</label>
+</div>
+
+<!-- Soal 23 -->
+<div class="soal">
+  <p>23. Berikut ini adalah pemenang pada lomba Chicago Marathon 2023.</p>
+  <img src="img/chicago-marathon-2023.png" alt="Chicago Marathon 2023" width="400">
+  <p>Sumber: <a href="https://www.kompas.id/baca/riset/2023/10/23/chicago-marathon-2023-merayakan-rekor-baru-dunia" target="_blank">https://www.kompas.id/baca/riset/2023/10/23/chicago-marathon-2023-merayakan-rekor-baru-dunia</a></p>
+  <p>Pada lomba tersebut, jarak yang harus ditempuh adalah 42 km. Kecepatan rata-rata Kelvin Kiptum pada lomba tersebut mendekati … meter/detik.</p>
+  <label><input type="radio" name="q23" value="A"> A. 5</label>
+  <label><input type="radio" name="q23" value="B"> B. 6</label>
+  <label><input type="radio" name="q23" value="C"> C. 7</label>
+  <label><input type="radio" name="q23" value="D"> D. 8</label>
+</div>
+
+
+<!-- Soal 24 -->
+<div class="soal">
+  <p>24. Tabel berikut menunjukkan hasil tes IPA:<br><img src="img/tabel-ipa.png" alt="tabel hasil tes IPA"><br>Berapa minimal banyak jawaban benar sehingga melebihi 70% siswa yang lain?</p>
+  <label><input type="radio" name="q24" value="A"> A. 7</label>
+  <label><input type="radio" name="q24" value="B"> B. 8</label>
+  <label><input type="radio" name="q24" value="C"> C. 9</label>
+  <label><input type="radio" name="q24" value="D"> D. 10</label>
+</div>
+
+<!-- Soal 25 -->
+<div class="soal">
+  <p>25. Pada perlombaan panjat pinang, mula-mula Jimmy memanjat sejauh \( \frac{2}{5} \) dari tinggi batang pinang, 
+    namun kemudian Jimmy merosot ke posisi \( \frac{1}{4} \) dari posisi sebelumnya. Selanjutnya, Jimmy memanjat kembali 
+    tepat \( \frac{1}{5} \) dari posisi terakhir. Jika Jimmy harus memanjat 6 meter lagi untuk sampai di puncak, maka tinggi batang pinang adalah ....</p>
+  <img src="img/panjat-pinang.png" alt="Gambar panjat pinang soal 25" width="100">
+  <label><input type="radio" name="q25" value="A"> A. 9,125</label>
+  <label><input type="radio" name="q25" value="B"> B. 9,375</label>
+  <label><input type="radio" name="q25" value="C"> C. 9,500</label>
+  <label><input type="radio" name="q25" value="D"> D. 9,750</label>
+</div>
+
+
+
+      <button type="button" onclick="cekJawaban()">Lihat Hasil</button>
+    </form>
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    function cekJawaban() {
+      const kunci = {
+      q1: "C",
+      q2: "B",
+      q3: "C",
+      q4: "C",
+      q5: "A",
+      q6: "A",
+      q7: "A",
+      q8: "A",
+      q9: "C",
+      q10: "B",
+      q11: "A",
+      q12: "C",
+      q13: "B",
+      q14: "A",
+      q15: "B",
+      q16: "D",
+      q17: "B",
+      q18: "C",
+      q19: "A",
+      q20: "D",
+      q21: "C", // asumsi grafik C benar
+      q22: "A",
+      q23: "C",
+      q24: "C",
+      q25: "B"
+    };
+
+
+      let skor = 0;
+      const total = Object.keys(kunci).length;
+      const jawabanUser = [];
+
+      for (let i = 1; i <= total; i++) {
+        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+        if (jawaban) {
+          jawabanUser.push(jawaban.value);
+          if (jawaban.value === kunci[`q${i}`]) skor++;
+        } else {
+          jawabanUser.push("Kosong");
+        }
+      }
+      const skorAkhir = Math.round((skor / total) * 100);
+      const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
+      const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
+      const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
+      const tableName = "Table 1";                // Nama default tabel
+
+      const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
+
+      const data = {
+      fields: {
+        nama: nama,
+        skor: skor,
+        total: total,
+        skor_100: skorAkhir,
+        jawaban: jawabanUser.join(";"),
+        mapel: "IPA"  // ← tambahkan baris ini
+      }
+    };
+
+      document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total}</h3>`;
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${airtableToken}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        alert("✅ Jawabanmu sudah terkirim ke Airtable!");
+      })
+      .catch((error) => {
+        console.error("Gagal kirim:", error);
+        alert("❌ Gagal mengirim ke Airtable.");
+      });
+    }
+  </script>
+</body>
+</html>

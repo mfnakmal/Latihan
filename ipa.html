@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Latihan Soal IPA SD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #a8e6cf, #dcedc1);
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      background-color: #ffffffcc;
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    h1, h2 {
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+    h1 { color: #3c9; }
+    h2 { color: #ff6f69; }
+    .soal {
+      background-color: #fefbd8;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      border-left: 10px solid #ffcc5c;
+    }
+    label {
+      display: block;
+      margin: 8px 0;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      background-color: #88d8b0;
+      color: white;
+      font-weight: bold;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+    }
+    button:hover { background-color: #66bb99; }
+    #hasil {
+      background-color: #dcedc1;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    .benar { color: green; font-weight: bold; }
+    .salah { color: red; font-weight: bold; }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      .container { padding: 15px; }
+      h1 { font-size: 24px; }
+      h2 { font-size: 18px; }
+      #hasil { font-size: 16px; }
+      button { font-size: 14px; padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; margin-bottom: 10px;">
+    <img src="logo-tutwuri.png" alt="Tut Wuri Handayani" height="60" style="margin: 5px;">
+    <img src="logo-sd.png" alt="Logo SD" height="60" style="margin: 5px;">
+    <h1 style="margin: 0; font-size: 22px; color: #2e7d32;">SDN Bangka 03 Pagi</h1>
+    <h2 style="margin: 0 0 20px; color: #555;">🌟Latihan Soal OSN-K Mata Pelajaran IPA🌟</h2>
+  </div>
+  <div class="container">
+    <h2>Masukkan Nama dan Jawab Semua Soal Ya!</h2>
+    <form id="quizForm">
+      <div class="soal">
+        <p>Nama Peserta:</p>
+        <input type="text" id="namaPeserta" name="namaPeserta" placeholder="Tulis nama lengkap" required style="padding: 8px; width: 100%; border-radius: 8px; border: 1px solid #ccc;">
+      </div>
+
+       <!-- Contoh 2 Soal, kamu bisa lanjutkan sesuai yang sudah kamu punya -->
+      <!-- Soal 1 sampai 25 -->
+  <div class="soal">
+    <p>1. Perhatikan gambar berikut.<br><img src="img/ipa1.jpg" alt="Belalang sembah" width="300" /></p>
+    <p>Pernyataan yang tepat berkaitan hewan pada gambar di atas adalah....</p>
+    <label><input type="radio" name="q1" value="A"> A. Hewan tersebut menempati tingkat trofik pertama.</label>
+    <label><input type="radio" name="q1" value="B"> B. Hewan tersebut berperan sebagai detritivor.</label>
+    <label><input type="radio" name="q1" value="C"> C. Hewan tersebut bersifat karnivora.</label>
+    <label><input type="radio" name="q1" value="D"> D. Hewan tersebut mengalami metamorfosis sempurna.</label>
+  </div>
+
+  <div class="soal">
+    <p>2. Tiga tulang pada telinga yang menghubungkan antara gendang telinga dengan rumah siput adalah....</p>
+    <label><input type="radio" name="q2" value="A"> A. Landasan, sanggurdi, dan martil.</label>
+    <label><input type="radio" name="q2" value="B"> B. Martil, landasan, dan sanggurdi.</label>
+    <label><input type="radio" name="q2" value="C"> C. Sanggurdi, landasan, dan martil.</label>
+    <label><input type="radio" name="q2" value="D"> D. Landasan, martil, dan sanggurdi.</label>
+  </div>
+
+  <div class="soal">
+    <p>3. Berikut pernyataan yang tepat mengenai sel darah merah pada manusia adalah....</p>
+    <label><input type="radio" name="q3" value="A"> A. Komponen seluler yang terbanyak kedua setelah leukosit pada darah manusia.</label>
+    <label><input type="radio" name="q3" value="B"> B. Memiliki kemampuan gerak amuboid dan dapat menembus ke luar pembuluh.</label>
+    <label><input type="radio" name="q3" value="C"> C. Memiliki kandungan pigmen berupa senyawa mioglobin yang berfungsi mengikat oksigen.</label>
+    <label><input type="radio" name="q3" value="D"> D. Sel darah merah mereduksi sebagian besar organelnya termasuk nukleus</label>
+  </div>
+
+  <div class="soal">
+    <p>4. Perhatikan beberapa ciri hewan berikut:<br>1. Suhu internal tubuh dipengaruhi suhu lingkungan.<br>2. Kulit dilapisi sisik kering.<br>3. Secara periodik mengalami ganti kulit.<br>4. Rahang fleksibel untuk menelan mangsa.<br>Hewan yang tidak memiliki ciri di atas adalah....</p>
+    <label><input type="radio" name="q4" value="A"> A. <img src="img/ipa4a.jpg" alt="Hewan A" width="150" /></label>
+    <label><input type="radio" name="q4" value="B"> B. <img src="img/ipa4b.jpg" alt="Hewan B" width="150" /></label>
+    <label><input type="radio" name="q4" value="C"> C. <img src="img/ipa4c.jpg" alt="Hewan C" width="150" /></label>
+    <label><input type="radio" name="q4" value="D"> D. <img src="img/ipa4d.jpg" alt="Hewan D" width="150" /></label>
+  </div>
+
+  <div class="soal">
+    <p>5. Perhatikan gambar berikut.<br><img src="img/ipa5.jpg" alt="Sendi Sutura" width="250" /></p>
+    <p>Tipe sendi dari struktur pada gambar adalah....</p>
+    <label><input type="radio" name="q5" value="A"> A. Diartrosis (sendi bebas)</label>
+    <label><input type="radio" name="q5" value="B"> B. Amfiartrosis (sendi kaku)</label>
+    <label><input type="radio" name="q5" value="C"> C. Sinkondrosis (sendi tulang rawan)</label>
+    <label><input type="radio" name="q5" value="D"> D. Sinartrosis (sendi mati)</label>
+  </div>
+
+    <div class="soal">
+    <p>6. Makhluk hidup yang berperan penting pada keberlangsungan siklus materi di dalam ekosistem adalah....</p>
+    <label><input type="radio" name="q6" value="A"> A. Keluwing (kaki seribu)</label>
+    <label><input type="radio" name="q6" value="B"> B. Jamur</label>
+    <label><input type="radio" name="q6" value="C"> C. Cacing tanah</label>
+    <label><input type="radio" name="q6" value="D"> D. Semut</label>
+  </div>
+
+  <div class="soal">
+    <p>7. Tumbuhan yang memiliki bunga tidak mungkin masuk ke dalam kelompok....</p>
+    <label><input type="radio" name="q7" value="A"> A. Gymnospermae</label>
+    <label><input type="radio" name="q7" value="B"> B. Angiospermae</label>
+    <label><input type="radio" name="q7" value="C"> C. Monokotil</label>
+    <label><input type="radio" name="q7" value="D"> D. Dikotil</label>
+  </div>
+
+  <div class="soal">
+    <p>8. Dua organisme yang mempunyai kesamaan genus memiliki kemungkinan berikut....</p>
+    <label><input type="radio" name="q8" value="A"> A. Kelas yang sama, ordo yang berbeda</label>
+    <label><input type="radio" name="q8" value="B"> B. Kelas yang berbeda, spesies yang sama</label>
+    <label><input type="radio" name="q8" value="C"> C. Ordo yang sama, spesies yang berbeda</label>
+    <label><input type="radio" name="q8" value="D"> D. Ordo yang berbeda, spesies yang sama</label>
+  </div>
+
+  <div class="soal">
+    <p>9. Dalam ekosistem sawah terjadi pola interaksi rantai makanan: Padi → Tikus → Ular → Elang. Bila ular musnah, kemungkinan yang terjadi....</p>
+    <label><input type="radio" name="q9" value="A"> A. Produktivitas padi meningkat karena turunnya populasi tikus</label>
+    <label><input type="radio" name="q9" value="B"> B. Produktivitas padi menurun karena tikus meningkat</label>
+    <label><input type="radio" name="q9" value="C"> C. Elang punah karena tak ada mangsa</label>
+    <label><input type="radio" name="q9" value="D"> D. Ular berkembang biak karena tak ada saingan</label>
+  </div>
+
+  <div class="soal">
+    <p>10. Makanan yang disimpan dalam lemari es tidak mudah membusuk. Hal tersebut disebabkan....</p>
+    <label><input type="radio" name="q10" value="A"> A. Enzim bakteri tidak bekerja</label>
+    <label><input type="radio" name="q10" value="B"> B. Bakteri pembusuk mati</label>
+    <label><input type="radio" name="q10" value="C"> C. Bakteri pembusuk berkembang biak</label>
+    <label><input type="radio" name="q10" value="D"> D. Endospora tumbuh cepat</label>
+  </div>
+
+  <div class="soal">
+    <p>11. Tahapan setelah membuat hipotesis dalam metode ilmiah adalah....</p>
+    <label><input type="radio" name="q11" value="A"> A. Melakukan analisis data</label>
+    <label><input type="radio" name="q11" value="B"> B. Melakukan penelitian</label>
+    <label><input type="radio" name="q11" value="C"> C. Menemukan masalah</label>
+    <label><input type="radio" name="q11" value="D"> D. Mengambil kesimpulan</label>
+  </div>
+
+  <div class="soal">
+    <p>12. Pernyataan yang tidak tepat berkaitan dengan perbandingan gigi kamu dan ayahmu adalah....</p>
+    <label><input type="radio" name="q12" value="A"> A. Jumlah gigi seri saya sama banyak dengan gigi seri ayah.</label>
+    <label><input type="radio" name="q12" value="B"> B. Jumlah gigi geraham ayah lebih banyak dari saya.</label>
+    <label><input type="radio" name="q12" value="C"> C. Jumlah gigi taring ayah lebih banyak dari saya.</label>
+    <label><input type="radio" name="q12" value="D"> D. Jumlah gigi geraham depan ayah dan saya sama banyak.</label>
+  </div>
+
+  <div class="soal">
+    <p>13. Hewan berikut yang tidak memiliki lidah adalah....</p>
+    <label><input type="radio" name="q13" value="A"> A. Penyu</label>
+    <label><input type="radio" name="q13" value="B"> B. Tokek</label>
+    <label><input type="radio" name="q13" value="C"> C. Ayam</label>
+    <label><input type="radio" name="q13" value="D"> D. Buaya</label>
+  </div>
+
+  <div class="soal">
+    <p>14. Perhatikan gambar berikut.<br><img src="img/ipa14.jpg" alt="Sirip paus" width="300" /></p>
+    <p>Fungsi dari bagian yang ditunjuk pada gambar adalah....</p>
+    <label><input type="radio" name="q14" value="A"> A. Menjaga keseimbangan</label>
+    <label><input type="radio" name="q14" value="B"> B. Mengatur arah gerakan</label>
+    <label><input type="radio" name="q14" value="C"> C. Mendayung</label>
+    <label><input type="radio" name="q14" value="D"> D. Memperlambat laju berenang</label>
+  </div>
+
+  <div class="soal">
+    <p>15. Hewan yang tidak bernapas menggunakan insang adalah....</p>
+    <label><input type="radio" name="q15" value="A"> A. Hiu paus</label>
+    <label><input type="radio" name="q15" value="B"> B. Udang lobster</label>
+    <label><input type="radio" name="q15" value="C"> C. Kuda laut</label>
+    <label><input type="radio" name="q15" value="D"> D. Anjing laut</label>
+  </div>
+
+  <div class="soal">
+    <p>16. Darah yang mengandung banyak oksigen tidak akan ditemui pada bagian berikut, kecuali....</p>
+    <label><input type="radio" name="q16" value="A"> A. Arteri pulmonalis</label>
+    <label><input type="radio" name="q16" value="B"> B. Vena porta hepatica</label>
+    <label><input type="radio" name="q16" value="C"> C. Ventrikel kanan jantung</label>
+    <label><input type="radio" name="q16" value="D"> D. Arteri renalis</label>
+  </div>
+
+  <div class="soal">
+    <p>17. Berikut ini pernyataan yang tidak berkaitan dengan karakteristik tumbuhan yang beradaptasi pada lingkungan miskin unsur hara....</p>
+    <label><input type="radio" name="q17" value="A"> A. Memiliki laju transpirasi yang tinggi.</label>
+    <label><input type="radio" name="q17" value="B"> B. Memiliki luas permukaan akar yang besar.</label>
+    <label><input type="radio" name="q17" value="C"> C. Memiliki rata-rata pertumbuhan yang rendah.</label>
+    <label><input type="radio" name="q17" value="D"> D. Akar bersimbiosis dengan jamur membentuk mikoriza.</label>
+  </div>
+
+  <div class="soal">
+    <p>18. See the figure below.See the figure below.<br><img src="img/ipa18.jpg" alt="Sistem pencernaan" width="300" /></p>
+    <p>Glucose is normally absorbed by structure...., and protein is firstly digested in....</p>
+    <label><input type="radio" name="q18" value="A"> A. D, A</label>
+    <label><input type="radio" name="q18" value="B"> B. E, C</label>
+    <label><input type="radio" name="q18" value="C"> C. A, G</label>
+    <label><input type="radio" name="q18" value="D"> D. H, F</label>
+  </div>
+
+  <div class="soal">
+    <p>19. Radit memeriksa golongan darah teman-temannya. Hasil tampak pada gambar.<br><img src="img/ipa19.jpg" alt="Golongan darah" width="300" /></p>
+    <p>Teman Radit yang bergolongan darah AB rhesus (-) adalah....</p>
+    <label><input type="radio" name="q19" value="A"> A. Panji</label>
+    <label><input type="radio" name="q19" value="B"> B. Markus</label>
+    <label><input type="radio" name="q19" value="C"> C. Udin</label>
+    <label><input type="radio" name="q19" value="D"> D. Sella</label>
+  </div>
+
+  <div class="soal">
+    <p>20. See the picture bellow.<br><img src="img/ipa20.jpg" alt="Biomagnifikasi" width="300" /></p>
+    <p>If there is pollution of harmful substances in the water, Birds of prey and humans as the highest trophic level are 
+      most at risk of accumulating these substances. This phenomenon is called....</p>
+    <label><input type="radio" name="q20" value="A"> A. Bioaccumulation</label>
+    <label><input type="radio" name="q20" value="B"> B. Biomagnification</label>
+    <label><input type="radio" name="q20" value="C"> C. Bioremediation</label>
+    <label><input type="radio" name="q20" value="D"> D. Eutrophication</label>
+  </div>
+
+  <div class="soal">
+    <p>21. Perhatikan gambar berikut.<br><img src="img/ipa21.jpg" alt="Kantung semar" width="250" /></p>
+    <p>Pernyataan yang tidak tepat berkaitan dengan tumbuhan tersebut adalah....</p>
+    <label><input type="radio" name="q21" value="A"> A. Perilaku tersebut dilakukan untuk memenuhi kebutuhan nitrogen.</label>
+    <label><input type="radio" name="q21" value="B"> B. Termasuk tumbuhan karnivora karena tidak dapat berfotosintesis.</label>
+    <label><input type="radio" name="q21" value="C"> C. Menghasilkan enzim protease untuk mencerna mangsa.</label>
+    <label><input type="radio" name="q21" value="D"> D. Kantung jebakan merupakan modifikasi dari daun.</label>
+  </div>
+
+  <div class="soal">
+    <p>22. Every year, humans deforest millions of hectares of tropical rain forest. 
+      Which of the following is a likely consequence of this deforestation?</p>
+    <label><input type="radio" name="q22" value="A"> A. Animal and plant populations eliminated, reducing biodiversity.</label>
+    <label><input type="radio" name="q22" value="B"> B. Increased CO₂ reduces ozone, more UV reaches Earth.</label>
+    <label><input type="radio" name="q22" value="C"> C. Lower oxygen concentration reduces animal diversity.</label>
+    <label><input type="radio" name="q22" value="D"> D. CO₂ increase reduces plant and algae growth.</label>
+  </div>
+
+  <div class="soal">
+    <p>23. Infeksi saluran kemih dapat disebabkan oleh bakteri yang masuk dari luar tubuh. Rute infeksi menuju ginjal adalah....</p>
+    <label><input type="radio" name="q23" value="A"> A. Ureter → Kantung kemih → Uretra → Ginjal</label>
+    <label><input type="radio" name="q23" value="B"> B. Uretra → Ureter → Kantung kemih → Ginjal</label>
+    <label><input type="radio" name="q23" value="C"> C. Kantung kemih → Ureter → Uretra → Ginjal</label>
+    <label><input type="radio" name="q23" value="D"> D. Uretra → Kantung kemih → Ureter → Ginjal</label>
+  </div>
+
+  <div class="soal">
+    <p>24. Perhatikan gambar berikut.<br><img src="img/ipa24.jpg" alt="Jalur impuls saraf" width="300" /></p>
+    <p>Jalur yang mewakili impuls saraf dari sumsum tulang belakang ke sel efektor adalah....</p>
+    <label><input type="radio" name="q24" value="A"> A. 1-2-3-4</label>
+    <label><input type="radio" name="q24" value="B"> B. 4-5-6-7</label>
+    <label><input type="radio" name="q24" value="C"> C. 6-5-4-3</label>
+    <label><input type="radio" name="q24" value="D"> D. 2-3-4-5</label>
+  </div>
+
+  <div class="soal">
+    <p>25. Perhatikan gambar berikut.<br><img src="img/ipa25.jpg" alt="Lapisan kulit" width="300" /></p>
+    <p>Bagian yang menghasilkan senyawa yang melembapkan kulit dan mencegah dehidrasi adalah....</p>
+    <label><input type="radio" name="q25" value="A"> A. P</label>
+    <label><input type="radio" name="q25" value="B"> B. U</label>
+    <label><input type="radio" name="q25" value="C"> C. T</label>
+    <label><input type="radio" name="q25" value="D"> D. S</label>
+  </div>
+
+      <button type="button" onclick="cekJawaban()">Lihat Hasil</button>
+    </form>
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    function cekJawaban() {
+      const kunci = {
+    q1: "C",
+    q2: "B",
+    q3: "D",
+    q4: "C",
+    q5: "D",
+    q6: "B",
+    q7: "A",
+    q8: "C",
+    q9: "D",
+    q10: "A",
+    q11: "B",
+    q12: "C",
+    q13: "A",
+    q14: "B",
+    q15: "D",
+    q16: "D",
+    q17: "A",
+    q18: "B",
+    q19: "B",
+    q20: "B",
+    q21: "B",
+    q22: "A",
+    q23: "D",
+    q24: "A",
+    q25: "B"
+  };
+
+
+      let skor = 0;
+      const total = Object.keys(kunci).length;
+      const jawabanUser = [];
+
+      for (let i = 1; i <= total; i++) {
+        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+        if (jawaban) {
+          jawabanUser.push(jawaban.value);
+          if (jawaban.value === kunci[`q${i}`]) skor++;
+        } else {
+          jawabanUser.push("Kosong");
+        }
+      }
+      const skorAkhir = Math.round((skor / total) * 100);
+      const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
+      const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
+      const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
+      const tableName = "Table 1";                // Nama default tabel
+
+      const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
+
+      const data = {
+      fields: {
+        nama: nama,
+        skor: skor,
+        total: total,
+        skor_100: skorAkhir,
+        jawaban: jawabanUser.join(";"),
+        mapel: "IPA"  // ← tambahkan baris ini
+      }
+    };
+
+      document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total}</h3>`;
+
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${airtableToken}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        alert("✅ Jawabanmu sudah terkirim ke Airtable!");
+      })
+      .catch((error) => {
+        console.error("Gagal kirim:", error);
+        alert("❌ Gagal mengirim ke Airtable.");
+      });
+    }
+  </script>
+</body>
+</html>

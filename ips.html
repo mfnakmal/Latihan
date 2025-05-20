@@ -74,8 +74,13 @@
   </style>
 </head>
 <body>
+  <div style="text-align: center; margin-bottom: 10px;">
+    <img src="logo-tutwuri.png" alt="Tut Wuri Handayani" height="60" style="margin: 5px;">
+    <img src="logo-sd.png" alt="Logo SD" height="60" style="margin: 5px;">
+    <h1 style="margin: 0; font-size: 22px; color: #2e7d32;">SDN Bangka 03 Pagi</h1>
+    <h2 style="margin: 0 0 20px; color: #555;">🌟Latihan Soal OSN-K Mata Pelajaran IPS🌟</h2>
+  </div>
   <div class="container">
-    <h1>🌟 Latihan Soal OSN-K IPS SD 🌟</h1>
     <h2>Masukkan Nama dan Jawab Semua Soal Ya!</h2>
     <form id="quizForm">
       <div class="soal">
@@ -321,6 +326,7 @@
           jawabanUser.push("Kosong");
         }
       }
+      const skorAkhir = Math.round((skor / total) * 100);
       const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
       const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
       const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
@@ -333,6 +339,7 @@
         nama: nama,
         skor: skor,
         total: total,
+        skor_100: skorAkhir,
         jawaban: jawabanUser.join(";"),
         mapel: "IPS"  // ← tambahkan baris ini
       }
