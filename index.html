@@ -189,27 +189,37 @@
           jawabanUser.push("Kosong");
         }
       }
-
       const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
-      const hasilHTML = `<h3>🎉 Skor: ${skor} dari ${total} soal</h3>`;
-      document.getElementById("hasil").innerHTML = hasilHTML;
+      const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
+      const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
+      const tableName = "Table 1";                // Nama default tabel
 
-      // Kirim ke Google Sheets pakai FormData agar bebas CORS
-      const formData = new FormData();
-      formData.append("nama", nama);
-      formData.append("skor", skor);
-      formData.append("total", total);
-      formData.append("jawaban", jawabanUser.join(";"));
+      const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
-      fetch("https://script.google.com/macros/s/AKfycbzRWsUaTngpMs3Vghrh63lHvW4D94_JY4T2GKGIff2HBqAwy0tah8ETWF6PnWPHbqB4Yw/exec", {
+      const data = {
+        fields: {
+          nama: nama,
+          skor: skor,
+          total: total,
+          jawaban: jawabanUser.join(";")
+        }
+      };
+      document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total}</h3>`;
+
+      fetch(url, {
         method: "POST",
-        body: formData
+        headers: {
+          "Authorization": `Bearer ${airtableToken}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
       })
       .then(() => {
-        alert("✅ Jawabanmu sudah terkirim ke Google Sheets!");
+        alert("✅ Jawabanmu sudah terkirim ke Airtable!");
       })
-      .catch(() => {
-        alert("❌ Gagal mengirim ke Sheets. Silakan cek koneksi atau ulangi lagi.");
+      .catch((error) => {
+        console.error("Gagal kirim:", error);
+        alert("❌ Gagal mengirim ke Airtable.");
       });
     }
   </script>
