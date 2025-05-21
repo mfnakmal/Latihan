@@ -337,60 +337,82 @@
   };
 
 
-      let skor = 0;
-      const total = Object.keys(kunci).length;
-      const jawabanUser = [];
+       let skor = 0;
+  const total = Object.keys(kunci).length;
+  const jawabanUser = [];
 
-      for (let i = 1; i <= total; i++) {
-        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
-        if (jawaban) {
-          jawabanUser.push(jawaban.value);
-          if (jawaban.value === kunci[`q${i}`]) skor++;
-        } else {
-          jawabanUser.push("Kosong");
-        }
+  // Reset semua feedback sebelumnya
+  document.querySelectorAll(".soal").forEach(el => {
+    el.classList.remove("benar", "salah");
+    const oldFeedback = el.querySelector(".feedback");
+    if (oldFeedback) oldFeedback.remove();
+  });
+
+  for (let i = 1; i <= total; i++) {
+    const soalDiv = document.querySelector(`input[name="q${i}"]`).closest(".soal");
+    const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+    let feedback = document.createElement("p");
+    feedback.classList.add("feedback");
+
+    if (jawaban) {
+      jawabanUser.push(jawaban.value);
+      if (jawaban.value === kunci[`q${i}`]) {
+        skor++;
+        feedback.innerHTML = "✔ Jawaban benar";
+        feedback.classList.add("benar");
+      } else {
+        feedback.innerHTML = `❌ Salah, jawaban yang benar adalah ${kunci[`q${i}`]}`;
+        feedback.classList.add("salah");
       }
-      const skorAkhir = Math.round((skor / total) * 100);
-      const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
-      const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
-      const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
-      const tableName = "Table 1";                // Nama default tabel
-
-      const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
-
-      const data = {
-      fields: {
-        nama: nama,
-        skor: skor,
-        total: total,
-        skor_100: skorAkhir,
-        jawaban: jawabanUser.join(";"),
-        mapel: "IPA"  // ← tambahkan baris ini
-      }
-    };
-
-      document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total}</h3>`;
-
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${airtableToken}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      .then(() => {
-        alert("✅ Jawabanmu sudah terkirim ke Airtable!");
-      })
-      .catch((error) => {
-        console.error("Gagal kirim:", error);
-        alert("❌ Gagal mengirim ke Airtable.");
-      });
+    } else {
+      jawabanUser.push("Kosong");
+      feedback.innerHTML = `❌ Belum dijawab, jawaban yang benar adalah ${kunci[`q${i}`]}`;
+      feedback.classList.add("salah");
     }
-  </script>
-    <!-- Footer -->
+
+    soalDiv.appendChild(feedback);
+  }
+
+  const skorAkhir = Math.round((skor / total) * 100);
+  const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
+  document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total} (Nilai: ${skorAkhir})</h3>`;
+
+  // Kirim ke Airtable
+  const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af";
+  const baseId = "appcDXhV9WX34l84P";
+  const tableName = "Table 1";
+  const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
+
+  const data = {
+    fields: {
+      nama: nama,
+      skor: skor,
+      total: total,
+      skor_100: skorAkhir,
+      jawaban: jawabanUser.join(";"),
+      mapel: "IPS"
+    }
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${airtableToken}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(() => alert("✅ Jawabanmu sudah terkirim ke Airtable!"))
+  .catch((error) => {
+    console.error("Gagal kirim:", error);
+    alert("❌ Gagal mengirim ke Airtable.");
+  });
+}
+</script>
+  <!-- Footer -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px; font-style: italic; color: gray;">
   Dibuat oleh Dewi Rahmawati, 2025
 </footer>
+
 </body>
 </html>

@@ -336,86 +336,105 @@
   <script>
     function cekJawaban() {
       const kunci = {
-      q1: "B",  // 25×2 = 50 (Susi), 20×3 = 60 (Wati), total = 110
-      q2: "B",  // 25 × (2 + 4) - 10 ÷ 2 = 150 - 5 = 145
-      q3: "A",  // 4³ - 3² = 64 - 9 = 55
-      q4: "C",  // (5/3) × 36 = 60 → bilangan = 36 × (5/3) = 60
-      q5: "A",  // faktor prima 144 = 2 dan 3
-      q6: "A",  // 144 - 81 = 63
-      q7: "A",  // (1/2) × 10 × 12 = 60 cm²
-      q8: "A",  // 3³ + 2⁴ = 27 + 16 = 43 → ⚠️ tidak ada pilihan tepat, tapi A paling dekat (35)
-      q9: "C",  // 1 buku = 2500 → 5 buku = 12.500
-      q10: "B", // barisan beda 3, suku ke-10 = 2 + 3×9 = 29
-      q11: "A", // 2/3 + 4/5 = (10+12)/15 = 22/15
-      q12: "C", // 2(p+l) = 36 → l = 8
-      q13: "B", // (3+2)² - (4×2) = 25 - 8 = 17 → pilihan B = 21 paling dekat
-      q14: "A", // peluang biru = 3/8
-      q15: "B", // 2⁴ + 3³ = 16 + 27 = 43 → D (38) paling mendekati
-      q16: "D", // persegi = 4×12 = 48; segitiga = 3×10 = 30; 3×30 = 90 → 90 - 48 = 42; s+p = 21 → l = 9, p = 12 → 9:12 = 3:4
-      q17: "B", // Berdasarkan gambar di PDF dan pendekatan geometri, B benar
-      q18: "C", // Rasio jari-jari dan tinggi berpengaruh ke 2πrt → hasil = 4:3
-      q19: "A", // Berdasarkan perbandingan luas berdasarkan HB:BE = 1:3
-      q20: "D", // Rata-rata awal 68 → total = 1360; siswa remedial = 3, bisa naik maksimal 3×(75 - nilai awal) → hasil tertinggi = 70,95
-      q21: "C", // Grafik C mewakili rerata dari tabel penjualan
-      q22: "A", // Total waktu masing-masing tim → selisih waktu = 11 detik
-      q23: "B", // Kecepatan = 42195 / 7200 ≈ 5.86 m/s → paling dekat B (6)
-      q24: "C", // 70% dari 20 siswa = 14 → nilai minimum yang lebih dari 14 siswa = 9
-      q25: "B"  // Posisi akhir = 3/25x, jarak ke puncak = 6 m → 22/25x = 6 → x = 150/22 = 6.81 m → jawaban terdekat B (9.375)
+      q1: "B",
+      q2: "B",
+      q3: "A",
+      q4: "C",
+      q5: "A",
+      q6: "A",
+      q7: "A",
+      q8: "A",
+      q9: "C",
+      q10: "B",
+      q11: "A",
+      q12: "C",
+      q13: "B",
+      q14: "A",
+      q15: "B",
+      q16: "D",
+      q17: "B",
+      q18: "C",
+      q19: "A",
+      q20: "D",
+      q21: "C",
+      q22: "A",
+      q23: "B",
+      q24: "C",
+      q25: "B"
     };
 
+       let skor = 0;
+  const total = Object.keys(kunci).length;
+  const jawabanUser = [];
 
+  // Reset semua feedback sebelumnya
+  document.querySelectorAll(".soal").forEach(el => {
+    el.classList.remove("benar", "salah");
+    const oldFeedback = el.querySelector(".feedback");
+    if (oldFeedback) oldFeedback.remove();
+  });
 
-      let skor = 0;
-      const total = Object.keys(kunci).length;
-      const jawabanUser = [];
+  for (let i = 1; i <= total; i++) {
+    const soalDiv = document.querySelector(`input[name="q${i}"]`).closest(".soal");
+    const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+    let feedback = document.createElement("p");
+    feedback.classList.add("feedback");
 
-      for (let i = 1; i <= total; i++) {
-        const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
-        if (jawaban) {
-          jawabanUser.push(jawaban.value);
-          if (jawaban.value === kunci[`q${i}`]) skor++;
-        } else {
-          jawabanUser.push("Kosong");
-        }
+    if (jawaban) {
+      jawabanUser.push(jawaban.value);
+      if (jawaban.value === kunci[`q${i}`]) {
+        skor++;
+        feedback.innerHTML = "✔ Jawaban benar";
+        feedback.classList.add("benar");
+      } else {
+        feedback.innerHTML = `❌ Salah, jawaban yang benar adalah ${kunci[`q${i}`]}`;
+        feedback.classList.add("salah");
       }
-      const skorAkhir = Math.round((skor / total) * 100);
-      const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
-      const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af"; // ← Token dari Airtable
-      const baseId = "appcDXhV9WX34l84P";         // ← Lihat di URL base kamu
-      const tableName = "Table 1";                // Nama default tabel
-
-      const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
-
-      const data = {
-      fields: {
-        nama: nama,
-        skor: skor,
-        total: total,
-        skor_100: skorAkhir,
-        jawaban: jawabanUser.join(";"),
-        mapel: "Matematika"  // ← tambahkan baris ini
-      }
-    };
-
-      document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total}</h3>`;
-
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${airtableToken}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      .then(() => {
-        alert("✅ Jawabanmu sudah terkirim ke Airtable!");
-      })
-      .catch((error) => {
-        console.error("Gagal kirim:", error);
-        alert("❌ Gagal mengirim ke Airtable.");
-      });
+    } else {
+      jawabanUser.push("Kosong");
+      feedback.innerHTML = `❌ Belum dijawab, jawaban yang benar adalah ${kunci[`q${i}`]}`;
+      feedback.classList.add("salah");
     }
-  </script>
+
+    soalDiv.appendChild(feedback);
+  }
+
+  const skorAkhir = Math.round((skor / total) * 100);
+  const nama = document.getElementById("namaPeserta").value.trim() || "Tanpa_Nama";
+  document.getElementById("hasil").innerHTML = `<h3>Skor: ${skor} dari ${total} (Nilai: ${skorAkhir})</h3>`;
+
+  // Kirim ke Airtable
+  const airtableToken = "pat6lPYgjUr1Fwr3m.04996d19009969c74c53e48a70743e12f69696c4686ddbdefb58bcf9bf84d4af";
+  const baseId = "appcDXhV9WX34l84P";
+  const tableName = "Table 1";
+  const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
+
+  const data = {
+    fields: {
+      nama: nama,
+      skor: skor,
+      total: total,
+      skor_100: skorAkhir,
+      jawaban: jawabanUser.join(";"),
+      mapel: "IPS"
+    }
+  };
+
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${airtableToken}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(() => alert("✅ Jawabanmu sudah terkirim ke Airtable!"))
+  .catch((error) => {
+    console.error("Gagal kirim:", error);
+    alert("❌ Gagal mengirim ke Airtable.");
+  });
+}
+</script>
   <!-- Footer -->
 <footer style="text-align: center; margin-top: 40px; padding: 10px; font-style: italic; color: gray;">
   Dibuat oleh Dewi Rahmawati, 2025
